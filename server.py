@@ -4,11 +4,6 @@ import socket
 import struct
 
 
-###########################################################
-####################### YOUR CODE #########################
-###########################################################
-
-
 def run_server(server_ip, server_port):
     serv = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     serv.bind((server_ip, server_port))

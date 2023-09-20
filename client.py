@@ -4,11 +4,6 @@ import socket
 import struct
 
 
-###########################################################
-####################### YOUR CODE #########################
-###########################################################
-
-
 def send_data(server_ip, server_port, data):
     '''
     Send data to server in address (server_ip, server_port).
