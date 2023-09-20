@@ -10,6 +10,7 @@ def send_data(server_ip, server_port, data):
     '''
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((server_ip, server_port))
+    client.send(struct.pack('<L', len(data)))
     client.send(bytes(data, 'utf-8'))
     client.close()
 

@@ -12,8 +12,10 @@ def run_server(server_ip, server_port):
       conn, addr = serv.accept()
       from_client = ''
       while True:
-        data = conn.recv(4096)
-        if not data: break
+        initial_data = conn.recv(4)
+        if not initial_data: break
+        data_length = struct.unpack("<L", initial_data)[0]
+        data = conn.recv(data_length)
         from_client += data.decode()
         print (from_client)
       conn.close()
