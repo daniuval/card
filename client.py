@@ -6,7 +6,7 @@ import struct
 
 def send_data(server_ip, server_port, data):
     '''
-    Send data to server in address (server_ip, server_port).
+    encode length of data and send to server, then send data.
     '''
     client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     client.connect((server_ip, server_port))
